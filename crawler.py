@@ -54,9 +54,3 @@ class Crawler:
         self.driver.quit()
 
 
-if __name__ == "__main__":
-
-    obj = Crawler("devverma269@gmail.com","!R0nald0!")
-    links = obj.crawl("tcs","hr")
-    print(links)
-    obj.close()
