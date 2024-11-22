@@ -54,3 +54,4 @@ class Crawler:
         self.driver.quit()
 
 
+print("Hi")
