@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options
 import time
 import random
+import re
 
 
 class Crawler:
@@ -21,21 +22,38 @@ class Crawler:
         self.email = email
         self.password = password
 
+    def __username(self, profileLink : str) -> str:
+        linkParts = re.split("[/?]", profileLink)
 
-    def crawl(self, companyName : str, departmentName : str, pageNum : int = 0) -> list:
+        found = False
+        index = 0
+
+        while not found:
+            if linkParts[index] == 'in':
+                index += 1
+                found = True
+                break
+            index += 1
+
+        return linkParts[index]
+
+
+
+    def crawl(self, companyName : str, departmentName : str, pageNum : int = 1) -> list:
 
         page_url = f"https://www.linkedin.com/search/results/people/?keywords={companyName}%20{departmentName}&origin=SWITCH_SEARCH_VERTICAL&searchId=ebd1073f-9fca-4df7-806d-4f1b64f5761c&page={pageNum}&sid=C5C"
 
         self.driver.get(page_url)
 
-        username = self.driver.find_element(By.ID,"username")
-        username.send_keys(self.email)
+        if(pageNum == 1):
+            username = self.driver.find_element(By.ID,"username")
+            username.send_keys(self.email)
 
-        password = self.driver.find_element(By.ID,"password")
-        password.send_keys(self.password)
+            password = self.driver.find_element(By.ID,"password")
+            password.send_keys(self.password)
 
-        submit = self.driver.find_element(By.CSS_SELECTOR,".from__button--floating")
-        submit.click()
+            submit = self.driver.find_element(By.CSS_SELECTOR,".from__button--floating")
+            submit.click()
 
         profiles = []
         try:
@@ -43,7 +61,8 @@ class Crawler:
 
             # Extract and print the href attributes
             for link in profile_links:
-                profiles.append(link.get_attribute("href"))
+                cleanLink = f"https://www.linkedin.com/in/{self.__username(link.get_attribute("href"))}/"
+                profiles.append(cleanLink)
         except Exception as e:
             print(f"Error occurred: {e}")
 
@@ -52,5 +71,18 @@ class Crawler:
 
     def close(self):
         self.driver.quit()
+
+
+# if __name__ == "__main__":
+
+#     obj = Crawler("devverma269@gmail.com","!R0nald0!")
+
+#     profiles = []
+#     for i in range(1,10):
+#         links = obj.crawl("deloitte",'hr',i)
+#         profiles.extend(links)
+
+#     print(len(profiles))
+
 
 
