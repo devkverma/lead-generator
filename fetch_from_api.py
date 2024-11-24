@@ -7,7 +7,7 @@ class FetchFromAPI:
     def __init__(self):
         self.url = "https://linkedin-data-api.p.rapidapi.com/get-profile-data-by-url"
         self.headers = {
-            "x-rapidapi-key": "07b09109eamshe6ffaa5916c6cc3p181168jsnfb9b4c61ce99",
+            "x-rapidapi-key": API_KEY,
             "x-rapidapi-host": "linkedin-data-api.p.rapidapi.com"
         }
 
