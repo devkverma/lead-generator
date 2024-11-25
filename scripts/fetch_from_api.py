@@ -1,13 +1,12 @@
 import requests
-from api_key import *
 from crawler import *
 
 class FetchFromAPI:
 
-    def __init__(self):
+    def __init__(self, apiKey : str):
         self.url = "https://linkedin-data-api.p.rapidapi.com/get-profile-data-by-url"
         self.headers = {
-            "x-rapidapi-key": API_KEY,
+            "x-rapidapi-key": apiKey,
             "x-rapidapi-host": "linkedin-data-api.p.rapidapi.com"
         }
 
@@ -48,20 +47,6 @@ class FetchFromAPI:
 
         return results
     
-
-# if __name__ == "__main__":
-
-#     crawler = Crawler("devverma269@gmail.com","!R0nald0!")
-
-#     fetchapi = FetchFromAPI()
-
-#     links = crawler.crawl("deloitte",'hr')
-#     crawler.close()
- 
-#     data = []
-#     data.append(fetchapi.fetch(links[0]))
-
-#     print(data)
 
 
 

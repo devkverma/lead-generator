@@ -72,17 +72,3 @@ class Crawler:
     def close(self):
         self.driver.quit()
 
-
-# if __name__ == "__main__":
-
-#     obj = Crawler("devverma269@gmail.com","!R0nald0!")
-
-#     profiles = []
-#     for i in range(1,10):
-#         links = obj.crawl("deloitte",'hr',i)
-#         profiles.extend(links)
-
-#     print(len(profiles))
-
-
-
