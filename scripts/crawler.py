@@ -62,7 +62,8 @@ class Crawler:
             # Extract and print the href attributes
             for link in profile_links:
                 cleanLink = f"https://www.linkedin.com/in/{self.__username(link.get_attribute("href"))}/"
-                profiles.append(cleanLink)
+                if cleanLink not in profiles:
+                    profiles.append(cleanLink)
         except Exception as e:
             print(f"Error occurred: {e}")
 
@@ -72,3 +73,6 @@ class Crawler:
     def close(self):
         self.driver.quit()
 
+if __name__ == "__main__":
+    crawler = Crawler("devverma269@gmail.com","!R0nald0!")
+    print(crawler.crawl("google","hr"))

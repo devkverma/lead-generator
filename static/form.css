@@ -1,0 +1,63 @@
+* {
+    
+    margin: 0;
+}
+body{
+    background-color: #44475A;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20vh;
+
+}
+.information{
+    color: aliceblue;
+    display:flex;
+    gap: 1rem;
+    justify-content: space-between;
+    margin: 10px;
+
+}
+#email , #password , #api_key  {
+    width: 500px;
+    border-radius: 10px;
+    border: none;
+    padding-left: 10px;
+}
+
+#parameters{
+    display: flex;
+    margin-top: 2rem;
+    gap: 10rem;
+    justify-content: center;
+    
+}
+.params{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+label {
+    color: aliceblue;
+    text-shadow: 2.5px 0px 5px black;
+}
+
+button{
+    margin-top: 5rem;
+    padding: 5px 50px 5px 50px;
+    font-size: 2rem;
+    border-radius: 1000px;
+}
+
+select , #num_pages{
+    width: 250px;
+    border-radius: 10px;
+    padding: 5px
+}

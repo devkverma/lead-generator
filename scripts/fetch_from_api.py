@@ -1,5 +1,4 @@
 import requests
-from crawler import *
 
 class FetchFromAPI:
 
