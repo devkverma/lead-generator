@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/form.css">
+    <title>Lead Generator</title>
+</head>
+<body>
+    <form action="/submit_form" method="POST">
+        <!-- Email/Username Input -->
+        <div id="personalInfo">
+            <div class="information">
+                <label for="email">Email or Username:</label>
+                <input placeholder="Enter your LinkedIn email or username" type="text" id="email" name="email" required>
+            </div>
+            <div class="information">
+                <label for="password">Password:</label>
+                <input placeholder="Enter your LinkedIn password" type="password" id="password" name="password" required>
+            </div>
+            <div class="information">
+                <label for="api_key">API Key:</label>
+                <input placeholder="Enter your api key" type="password" id="api_key" name="api_key" required>
+            </div>
+        </div>
+
+        <div id="parameters">
+            <div class="params">
+                <label for="companies">Select a Company:</label>
+                <select id="companies" name="company" required>
+                    <option value="">--Select a Company--</option>
+                    <option value="google">Google</option>
+                    <option value="microsoft">Microsoft</option>
+                    <option value="netflix">Netflix</option>
+                </select>
+            </div>
+            <div class="params">
+                <label for="departments">Select a Department:</label>
+                <select id="departments" name="department" required>
+                    <option value="">--Select a Department--</option>
+                    <option value="hr">HR</option>
+                    <option value="it">IT</option>
+                    <option value="marketing">Marketing</option>
+                </select>
+            </div>
+            <div class="params">
+                <label for="num_pages">Number of Pages to Scrape:</label>
+                <input value="1" type="number" id="num_pages" name="num_pages" min="1" required>
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
