@@ -1,63 +1,105 @@
 * {
-    
-    margin: 0;
+  margin: 0;
 }
-body{
-    background-color: #44475A;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.5rem;
+body {
+  background-color: #171123;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.5rem;
 }
-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20vh;
+h1 {
+  color: aliceblue;
+  text-align: center;
+  position: relative;
+  top: 25px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10vh;
+}
+#personalInfo {
+  background-color: #372248;
+  padding: 5%;
+  border-radius: 50px;
+  box-shadow: 5px 5px 50px rgb(4, 4, 4);
+}
+#personalInfo:hover {
+  box-shadow: 5px 5px 30px rgb(204, 39, 113) inset;
+}
+.information {
+  color: aliceblue;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin: 10px;
+}
+#email,
+#password,
+#api_key {
+  width: 500px;
+  border-radius: 10px;
+  border: none;
+  padding-left: 10px;
+}
 
+#parameters {
+  display: flex;
+  margin-top: 2rem;
+  gap: 10rem;
+  justify-content: center;
+  background-color: #372248;
+  padding: 2.5%;
+  border-radius: 25px;
+  box-shadow: 5px 5px 25px rgb(4, 4, 4);
 }
-.information{
-    color: aliceblue;
-    display:flex;
-    gap: 1rem;
-    justify-content: space-between;
-    margin: 10px;
-
+#parameters:hover {
+  box-shadow: 5px 5px 30px rgb(204, 39, 113) inset;
 }
-#email , #password , #api_key  {
-    width: 500px;
-    border-radius: 10px;
-    border: none;
-    padding-left: 10px;
-}
-
-#parameters{
-    display: flex;
-    margin-top: 2rem;
-    gap: 10rem;
-    justify-content: center;
-    
-}
-.params{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
+.params {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 label {
-    color: aliceblue;
-    text-shadow: 2.5px 0px 5px black;
+  color: aliceblue;
+  text-shadow: 2.5px 0px 5px black;
 }
 
-button{
-    margin-top: 5rem;
-    padding: 5px 50px 5px 50px;
-    font-size: 2rem;
-    border-radius: 1000px;
+button {
+  margin-top: 5rem;
+  padding: 5px 50px 5px 50px;
+  font-size: 2rem;
+  border-radius: 1000px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  box-shadow: 5px 5px 50px black;
+  color: rgb(30, 30, 195);
+}
+button:hover {
+  box-shadow: 5px 5px 50px #59d2fe inset;
+  border: 10px #59d2fe;
+}
+select,
+#num_pages {
+  width: 250px;
+  border-radius: 10px;
+  padding: 5px;
 }
 
-select , #num_pages{
-    width: 250px;
-    border-radius: 10px;
-    padding: 5px
+@media (orientation: portrait) {
+  .size {
+    font-size: 1.5rem;
+  }
+  #parameters {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  #email,
+  #password,
+  #api_key {
+    width: 175px;
+  }
 }
