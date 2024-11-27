@@ -73,6 +73,3 @@ class Crawler:
     def close(self):
         self.driver.quit()
 
-if __name__ == "__main__":
-    crawler = Crawler("devverma269@gmail.com","!R0nald0!")
-    print(crawler.crawl("google","hr"))

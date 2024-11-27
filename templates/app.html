@@ -7,19 +7,20 @@
     <title>Lead Generator</title>
 </head>
 <body>
+    <h1>Lead Generator</h1>
     <form action="/submit_form" method="POST">
         <!-- Email/Username Input -->
         <div id="personalInfo">
             <div class="information">
-                <label for="email">Email or Username:</label>
+                <label class="size" for="email">Email or Username:</label>
                 <input placeholder="Enter your LinkedIn email or username" type="text" id="email" name="email" required>
             </div>
             <div class="information">
-                <label for="password">Password:</label>
+                <label class="size" for="password">Password:</label>
                 <input placeholder="Enter your LinkedIn password" type="password" id="password" name="password" required>
             </div>
             <div class="information">
-                <label for="api_key">API Key:</label>
+                <label class="size"   for="api_key">API Key:</label>
                 <input placeholder="Enter your api key" type="password" id="api_key" name="api_key" required>
             </div>
         </div>
@@ -48,7 +49,7 @@
                 <input value="1" type="number" id="num_pages" name="num_pages" min="1" required>
             </div>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">SUBMIT</button>
     </form>
 </body>
 </html>
