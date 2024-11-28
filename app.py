@@ -38,6 +38,7 @@ def submit_form():
     crawler.close()
 
     df = pd.DataFrame(profiles)
+    df = df[df['username'].notna() & (df['username'] != '')]
     
     # Convert DataFrame to CSV format
     csv_data = df.to_csv(index=False)
@@ -54,4 +55,4 @@ def submit_form():
     return response
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

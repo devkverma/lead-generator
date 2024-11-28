@@ -23,9 +23,6 @@ class FetchFromAPI:
                      'company': None,
                      'position': None,
                      'profileLink': profileLink,
-                     'email-1': None,
-                     'email-2': None,
-                     'email-3': None
                      }
 
         results['username'] = response.json().get('username',None)
