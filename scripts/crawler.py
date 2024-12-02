@@ -61,7 +61,7 @@ class Crawler:
 
             # Extract and print the href attributes
             for link in profile_links:
-                cleanLink = f"https://www.linkedin.com/in/{self.__username(link.get_attribute("href"))}/"
+                cleanLink = f"https://www.linkedin.com/in/{self.__username(link.get_attribute('href'))}/"
                 if cleanLink not in profiles:
                     profiles.append(cleanLink)
         except Exception as e:
